@@ -10,12 +10,12 @@ export default function Product(props) {
 function Left(props) {
   return (
     <Row className="product-container">
-      <Col xs="6" className="p-0">
+      <Col xs="12" md="6" className="p-0">
         <div className="product-image-wrapper">
           <img src={props.image} alt="anh"></img>
         </div>
       </Col>
-      <Col xs="6" className="product-info-wrapper">
+      <Col xs="12" md="6" className="product-info-wrapper">
         <div>
           <h2 className="text-primary">{props.name}</h2>
         </div>
@@ -35,7 +35,11 @@ function Left(props) {
 function Right(props) {
   return (
     <Row className="product-container">
-      <Col xs="6" className="product-info-wrapper">
+      <Col
+        xs={{ size: 12, order: 2 }}
+        md={{ size: 6, order: 1 }}
+        className="product-info-wrapper"
+      >
         <div>
           <h2 className="text-primary">{props.name}</h2>
         </div>
@@ -49,7 +53,11 @@ function Right(props) {
           <Button color="info">Liên hệ tư vấn</Button>
         </div>
       </Col>
-      <Col xs="6" className="p-0">
+      <Col
+        xs={{ size: 12, order: 1 }}
+        md={{ size: 6, order: 2 }}
+        className="p-0"
+      >
         <div className="product-image-wrapper">
           <img src={props.image} alt="anh"></img>
         </div>

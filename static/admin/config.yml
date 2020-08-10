@@ -5,12 +5,6 @@ backend:
 media_folder: static/img
 public_folder: /img
 
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: deadong-company
-    api_key: 774125837635684
-
 collections:
   - name: "products"
     label: "Products"
