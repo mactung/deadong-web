@@ -18,6 +18,7 @@ export default function Products() {
                 structure={structure}
                 name={node.frontmatter.name}
                 model={node.frontmatter.model}
+                image={node.frontmatter.images.publicURL}
                 description={node.excerpt}
               />
             )
@@ -30,13 +31,19 @@ export default function Products() {
 
 const productsQuery = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(products)/" } }
+      sort: { fields: frontmatter___order }
+    ) {
       edges {
         node {
           frontmatter {
             name
             order
             model
+            images {
+              publicURL
+            }
           }
           excerpt(format: HTML)
         }

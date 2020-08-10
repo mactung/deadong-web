@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Row, Col } from "reactstrap"
+import { Container, Row, Col, Button } from "reactstrap"
 export default function Product(props) {
   return (
     <Container className="product-container">
@@ -11,17 +11,22 @@ function Left(props) {
   return (
     <Row className="product-container">
       <Col xs="6" className="p-0">
-        <div className="product-image-wrapper"></div>
+        <div className="product-image-wrapper">
+          <img src={props.image} alt="anh"></img>
+        </div>
       </Col>
-      <Col xs="6">
-        <div className="product-info-wrapper">
-          <div>
-            <h2>{props.name}</h2>
-          </div>
-          <div>
-            <h3>Model: {props.model}</h3>
-          </div>
+      <Col xs="6" className="product-info-wrapper">
+        <div>
+          <h2 className="text-primary">{props.name}</h2>
+        </div>
+        <div>
+          <h5 className="text-info">Model: {props.model}</h5>
+        </div>
+        <div className="product-detail">
           <div dangerouslySetInnerHTML={{ __html: props.description }} />
+        </div>
+        <div>
+          <Button color="info">Liên hệ tư vấn</Button>
         </div>
       </Col>
     </Row>
@@ -30,19 +35,24 @@ function Left(props) {
 function Right(props) {
   return (
     <Row className="product-container">
-      <Col xs="6">
-        <div className="product-info-wrapper">
-          <div>
-            <h2>{props.name}</h2>
-          </div>
-          <div>
-            <h3>Model: {props.model}</h3>
-          </div>
+      <Col xs="6" className="product-info-wrapper">
+        <div>
+          <h2 className="text-primary">{props.name}</h2>
+        </div>
+        <div>
+          <h5 className="text-info">Model: {props.model}</h5>
+        </div>
+        <div className="product-detail">
           <div dangerouslySetInnerHTML={{ __html: props.description }} />
+        </div>
+        <div>
+          <Button color="info">Liên hệ tư vấn</Button>
         </div>
       </Col>
       <Col xs="6" className="p-0">
-        <div className="product-image-wrapper"></div>
+        <div className="product-image-wrapper">
+          <img src={props.image} alt="anh"></img>
+        </div>
       </Col>
     </Row>
   )
